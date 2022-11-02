@@ -1,6 +1,25 @@
 
-
 var personaje = document.getElementById("personaje");
+
+$(document).ready(function () {
+    juego();
+});
+
+function juego() {
+    let id = null;
+    id = setInterval(frame, 50);
+    function frame() {
+        //insertar img pergamino con logo
+        if (personaje.offsetLeft >= 200) {
+            $(".pergamino-logo").fadeIn()
+        }
+    }
+}
+//insertar img pergamino con logo
+$(".pergamino-logo").css("display", "none");
+$("#btn").click(function () {
+    $(".pergamino-logo").fadeIn()
+})
 
 //animacion con javascript de movimiento a la derecha
 function movDch() {
@@ -58,16 +77,16 @@ function agachar() {
     });
 }
 */
-function fin(){
-    
+function fin() {
+
 }
 function puzle() {
 
 }
 
 //cuando se detecta el evento de pulsar una tecla llama a una función
-document.addEventListener("keydown", function () {
-    switch (event.key) {
+document.addEventListener("keydown", function (e) {
+    switch (e.key) {
         case "w":
         case "W":
         case " ":
