@@ -7,19 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="contenedor-fondo">
-        <img class="fondo" src="images/mazmorra.jpg" alt="">
-        <div class="cont-puerta">
+        <img class="fondo" src="images/mazmorra2.png" alt="">
+        <div class="objetos">
             <img class="puerta" src="/images/puerta.png" alt="">
+            <img class="pergamino-logo" src="images/pergaminoLogo.png" alt="pergamino con logo">
         </div>
         <div class="contenedorPersonaje" id="personaje">
             <img class="personaje" id="personajeIni" src="images/personaje.png" alt="">
             <img class="personaje" id="personajeIzq" src="images/personajeIzq.png" alt="">
             <img class="personaje" id="personajeAgachado" src="images/personajeAgachado.png" alt="">
         </div>
+        <div class="tutorial">
+            <img src="images/flech-dch.png" alt="">
+            <img src="images/d.png" alt="">
+            <p class="derecha">Moverte a la derecha</p>
+            <img src="images/flech-izq.png" alt="">
+            <img src="images/a.png" alt="">
+            <p class="izquierda">Moverte a la izquierda</p>
+        </div>
+        <input id="btn" type="button" value="acction">
     </div>
     <script src="/js/script.js"></script>
 </body>
