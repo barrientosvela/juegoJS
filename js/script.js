@@ -34,7 +34,7 @@ function juego() {
         capturaEventos(player, cambio);
     }
 }
-function local() {   // falla-- 
+function local() {   // mejora incluyendo fecha como key y poder ver un historial de partidas almacenadas en el localStorage
     if (`${nombreJugador}` == "") {
         var local = localStorage.setItem('jugador', `invitado`);
     } else {
@@ -68,13 +68,6 @@ function menuInicio() {
     });
 }
 
-
-function tutorial() {
-}
-
-function fin() {
-
-}
 class CambioNivel {
     acciones() {
         $(".pergamino-logo").css("display", "none");
