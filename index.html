@@ -6,31 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego</title>
+    <link rel="shortcut icon" href="images/LogoFavicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="contenedor-fondo">
-        <img class="fondo" src="images/mazmorra2.png" alt="">
+        <img class="fondo" id="imgFondoInicio" src="images/fondoInicio.jpg" alt="">
+        <input id="btnJugar" type="image" src="images/botonPlay.png">
+        <img id="mute" src="images/silenciar-volumen.png" alt="">
+        <img class="fondo" id="imgFondo" src="images/mazmorra2.png" alt="">
+        <img class="fondo" id="imgFondo2" src="images/mazmorra3.jpg" alt="">
+        <audio id="musicaFondo" src="others/fondo.mp3" loop="true" height="0px" width="0px"></audio>
         <div class="objetos">
             <img class="puerta" src="/images/puerta.png" alt="">
             <img class="pergamino-logo" src="images/pergaminoLogo.png" alt="pergamino con logo">
+        </div>
+        <div class="tutorial">
+            <img id="p1" src="images/dFlecha.png" alt="">
+            <img id="p2" src="images/aFlecha.png" alt="">
+            <img id="p3" src="images/wArriba.png" alt="">
         </div>
         <div class="contenedorPersonaje" id="personaje">
             <img class="personaje" id="personajeIni" src="images/personaje.png" alt="">
             <img class="personaje" id="personajeIzq" src="images/personajeIzq.png" alt="">
             <img class="personaje" id="personajeAgachado" src="images/personajeAgachado.png" alt="">
+            <audio id="sonidoSalto" src=""></audio>
         </div>
-        <div class="tutorial">
-            <img src="images/flech-dch.png" alt="">
-            <img src="images/d.png" alt="">
-            <p class="derecha">Moverte a la derecha</p>
-            <img src="images/flech-izq.png" alt="">
-            <img src="images/a.png" alt="">
-            <p class="izquierda">Moverte a la izquierda</p>
-        </div>
-        <input id="btn" type="button" value="acction">
     </div>
     <script src="/js/script.js"></script>
 </body>
