@@ -95,3 +95,22 @@
     top: 300px;
     width: 500px;
 }
+.nombreJugador{
+    position: absolute;
+    left: 800px;
+    top: 200px;
+    width: 500px;
+    color: #ffff;
+}
+.nombre{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+.texto{
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffff;
+    font-size: 30px;
+    position: absolute;
+    left: 650px;
+    top: 300px;
+}

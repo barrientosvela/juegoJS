@@ -8,19 +8,25 @@
     <title>Juego</title>
     <link rel="shortcut icon" href="images/LogoFavicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="contenedor-fondo">
         <img class="fondo" id="imgFondoInicio" src="images/fondoInicio.jpg" alt="">
+        <div class="nombreJugador">
+            <p class="nombre">Jugador:</p>
+            <input type="text" class="campoNombre" id="nombre" />
+        </div>
         <input id="btnJugar" type="image" src="images/botonPlay.png">
         <img id="mute" src="images/silenciar-volumen.png" alt="">
         <img class="fondo" id="imgFondo" src="images/mazmorra2.png" alt="">
         <img class="fondo" id="imgFondo2" src="images/mazmorra3.jpg" alt="">
         <audio id="musicaFondo" src="others/fondo.mp3" loop="true" height="0px" width="0px"></audio>
         <div class="objetos">
-            <img class="puerta" src="/images/puerta.png" alt="">
+            <img class="puerta" id="puerta1" src="/images/puerta.png" alt="">
+            <img class="puerta" id="Pabierta" src="/images/PuertaAbierta.png" alt="">
+            <img class="puerta" id="Pcerrada" src="/images/PuertaCerrada.png" alt="">
             <img class="pergamino-logo" src="images/pergaminoLogo.png" alt="pergamino con logo">
         </div>
         <div class="tutorial">
