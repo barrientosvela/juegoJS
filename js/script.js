@@ -15,8 +15,9 @@ $(document).ready(function () {
 function juego() {
     var player = new Player();
     var n1 = new Nivel1();
-    n1.acciones();
+    var cambio = new CambioNivel();
     let id = null;
+    n1.acciones();
     id = setInterval(frame, 50);
     function frame() {
         if (contNivel == 0) {
@@ -24,18 +25,22 @@ function juego() {
             n1.animaciones();
         } else {
             if (contNivel == 1) {
-                nivel2();
+                cambio.reiniciaPersonaje();
+                cambio.reiniciaEscenerio();
+            }else{
+                clearInterval(id);
             }
         }
-        capturaEventos(player);
+        capturaEventos(player, cambio);
     }
 }
 function local() {   // falla-- 
-    if (nombreJugador == "") {
-        return localStorage.setItem('jugador', `invitado`);
+    if (`${nombreJugador}` == "") {
+        var local = localStorage.setItem('jugador', `invitado`);
     } else {
-        campoNombre.style.display = "none";
-        return localStorage.setItem('jugador', `${nombreJugador}`);
+        $(".campoNombre").css("display", "none");
+        var local = localStorage.setItem('jugador', `${nombreJugador}`);
+        return local;
     }
 }
 function menuInicio() {
@@ -70,21 +75,26 @@ function tutorial() {
 function fin() {
 
 }
-function cambioNivel() {
-    document.getElementById("personajeIni").style.display = 'block';
-    document.getElementById("personajeIzq").style.display = 'none';
-    personaje.style.left = "20px";
-    contNivel++;
-}
-class Nivel2 {
+class CambioNivel {
     acciones() {
         $(".pergamino-logo").css("display", "none");
+        $("#t1").fadeOut();
+        $("#t2").css("display", "none");
+        $("#descrip").fadeIn();
+        $(".puerta").css("display", "none");
         $("#imgFondo").css("display", "none");
         $("#imgFondo2").css("display", "block");
     }
+    reiniciaPersonaje() {
+        document.getElementById("personajeIni").style.display = 'block';
+        document.getElementById("personajeIzq").style.display = 'none';
+        personaje.style.left = "20px";
+        contNivel++;
+    }
 }
 
-function capturaEventos(p) {
+function capturaEventos(p, c) {
+
     //cuando se detecta el evento de pulsar una tecla llama a una función
     document.addEventListener("keydown", function (e) {
         switch (e.key) {
@@ -108,8 +118,8 @@ function capturaEventos(p) {
             case "e":
             case "E":
                 if (personaje.offsetLeft >= window.innerWidth - 250) {
-                    cambioNivel();
-                    nivel2();
+                    c.acciones();
+                    c.reiniciaPersonaje();
                 }
         }
     });
@@ -119,11 +129,12 @@ class Nivel1 {
     acciones() {
         $("#imgFondoInicio").css("display", "none");
         $("#btnJugar").css("display", "none");
+        $(".nombreJugador").css("display", "none");
+        $("#Pabierta").css("display", "none");
         $("#imgFondo").css("display", "block");
         $("<p> Mi nombre es José Barrientos Vela y soy desarrollador web. </p>").appendTo(".objetos").attr({ "class": "texto", "id": "t1" });
         $("<p> Me gusta la tecnología y todo lo relacionado con ella. </p>").appendTo(".objetos").attr({ "class": "texto", "id": "t2" });
-        $("#t1").css("display", "none");
-        $("#t2").css("display", "none");
+        $(".texto").css("display", "none")
     }
     tutorial() {
         // Inserta imagenes del tutorial

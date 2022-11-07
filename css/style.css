@@ -113,4 +113,5 @@
     position: absolute;
     left: 650px;
     top: 300px;
+    display: "none";
 }
