@@ -34,14 +34,16 @@ function juego() {
         capturaEventos(player, cambio);
     }
 }
-function local() {   // mejora incluyendo fecha como key y poder ver un historial de partidas almacenadas en el localStorage
+function jugador() {   // mejora incluyendo fecha como key y poder ver un historial de partidas almacenadas en el localStorage
+    numJugador = 1;
     if (`${nombreJugador}` == "") {
-        var local = localStorage.setItem('jugador', `invitado`);
+        var local = localStorage.setItem(`Jugador.${numJugador}`, `invitado`);
     } else {
         $(".campoNombre").css("display", "none");
         var local = localStorage.setItem('jugador', `${nombreJugador}`);
         return local;
     }
+    numJugador++;
 }
 function menuInicio() {
     $(".pergamino-logo").css("display", "none");
@@ -51,7 +53,7 @@ function menuInicio() {
     $(".objetos").css("display", "none");
     $(".tutorial").css("display", "none");
     btnJugar.addEventListener("click", () => {
-        local();
+        jugador();
         juego();
         $("#personaje").css("display", "block");
         $(".objetos").css("display", "block");
